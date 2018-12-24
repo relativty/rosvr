@@ -79,5 +79,8 @@ RUN cmake ..
 RUN make
 WORKDIR /root/
 
-# Set workdir
-WORKDIR /root/
+# Install the Relativ plugin
+RUN cp -r /root/relativ-osvr-plugin/relativ_osvr_plugin/build/lib /usr
+
+# Start OSVR
+CMD osvr_server
