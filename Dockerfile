@@ -35,7 +35,8 @@ WORKDIR /root/
 RUN git clone --recurse-submodules https://github.com/OSVR/OSVR-Core.git
 RUN mkdir OSVR-Core/build
 WORKDIR /root/OSVR-Core/build
-RUN cmake .. -DCMAKE_INSTALL_PREFIX=~/osvr
+RUN cmake .. -DCMAKE_INSTALL_PREFIX=/usr -DCMAKE_BUILD_TYPE=Release
+#RUN cmake .. -DCMAKE_INSTALL_PREFIX=~/osvr
 RUN make
 RUN make install
 WORKDIR /root/

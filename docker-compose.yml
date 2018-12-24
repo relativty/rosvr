@@ -1,0 +1,9 @@
+version: '3'
+
+services:
+  rosvr:
+    build: .
+    container_name: rosvr
+    volumes:
+      - .:/root/shared
+    command: cp -r relativ-osvr-plugin/relativ_osvr_plugin/lib/ shared/
